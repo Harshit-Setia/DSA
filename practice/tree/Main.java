@@ -1,0 +1,15 @@
+public class Main {  
+    public static void main(String[] args) {
+        Tree t1=new Tree();
+        int arr[]={1,2,-1,-1,3,4,-1,-1,5,-1,-1};
+        Node root=t1.buildBinaryTree(arr);
+        t1.preorder(root);
+        System.out.println();
+        t1.inorder(root);
+        System.out.println();
+        t1.postorder(root);
+        System.out.println();
+        t1.levelorder(root);
+    }
+
+}
