@@ -4,6 +4,8 @@ import java.util.Queue;
 public class Tree{
 
     static int idx=-1;
+
+    //building tree using preorder
     Node buildBinaryTree(int arr[]){
         idx++;
         if(arr[idx]==-1)return null;
@@ -33,6 +35,7 @@ public class Tree{
         postorder(root.right);
         System.out.print(root.data+" ");
     }
+
     //bfs
     void levelorder(Node root){
         Queue<Node> q=new LinkedList<>();
@@ -60,5 +63,27 @@ public class Tree{
             }
         }
         System.out.println();
+    }
+
+    //height of tree
+    int heightOfTree(Node root){
+        if(root==null)return 0;
+        return Math.max(heightOfTree(root.left),heightOfTree(root.right))+1;
+    }
+
+    //number of nodes in tree 
+    int nodeCnt(Node root){
+        if(root==null)return 0;
+        return nodeCnt(root.left)+nodeCnt(root.right)+1;
+    }
+
+    //sum of all nodes
+    int sumOfNodes(Node root){
+        int sum=0;
+        if(root==null)return 0;
+        sum+=root.data;
+        sum+=sumOfNodes(root.left);
+        sum+=sumOfNodes(root.right);
+        return sum;
     }
 }
