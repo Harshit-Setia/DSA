@@ -1,6 +1,6 @@
-public class Node {
-    int data;
-    Node next;
+class Node {
+    public int data;
+    public Node next;
 
     Node(int data){
         this.data=data;
