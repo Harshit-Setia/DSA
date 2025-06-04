@@ -1,8 +1,8 @@
-class Node{
+class TreeNode{
     int data;
-    Node left;
-    Node right;
-    Node(int data){
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int data){
         this.data=data;
         this.left=null;
         this.right=null;

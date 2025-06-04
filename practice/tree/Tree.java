@@ -6,30 +6,30 @@ public class Tree{
     static int idx=-1;
 
     //building tree using preorder
-    Node buildBinaryTree(int arr[]){
+    TreeNode buildBinaryTree(int arr[]){
         idx++;
         if(arr[idx]==-1)return null;
-        Node root=new Node(arr[idx]);
+        TreeNode root=new TreeNode(arr[idx]);
         root.left=buildBinaryTree(arr);
         root.right=buildBinaryTree(arr);
         return root;
     }
 
-    void preorder(Node root){
+    void preorder(TreeNode root){
         if(root==null)return;
         System.out.print(root.data+" ");
         preorder(root.left);
         preorder(root.right);
     }
 
-    void inorder(Node root){
+    void inorder(TreeNode root){
         if(root==null)return;
         inorder(root.left);
         System.out.print(root.data+" ");
         inorder(root.right);
     }
 
-    void postorder(Node root){
+    void postorder(TreeNode root){
         if(root==null)return;
         postorder(root.left);
         postorder(root.right);
@@ -37,13 +37,13 @@ public class Tree{
     }
 
     //bfs
-    void levelorder(Node root){
-        Queue<Node> q=new LinkedList<>();
+    void levelorder(TreeNode root){
+        Queue<TreeNode> q=new LinkedList<>();
         q.add(root);
         //use to track level of tree
         q.add(null);
         while (q.size()>0) {
-            Node curr=q.remove();
+            TreeNode curr=q.remove();
             if(curr==null){
                 if(!q.isEmpty()){
                     System.out.println();
@@ -66,24 +66,24 @@ public class Tree{
     }
 
     //height of tree
-    int heightOfTree(Node root){
+    int heightOfTree(TreeNode root){
         if(root==null)return 0;
         return Math.max(heightOfTree(root.left),heightOfTree(root.right))+1;
     }
 
-    //number of nodes in tree 
-    int nodeCnt(Node root){
+    //number of Treenodes in tree 
+    int TreenodeCnt(TreeNode root){
         if(root==null)return 0;
-        return nodeCnt(root.left)+nodeCnt(root.right)+1;
+        return TreenodeCnt(root.left)+TreenodeCnt(root.right)+1;
     }
 
-    //sum of all nodes
-    int sumOfNodes(Node root){
+    //sum of all Treenodes
+    int sumOfTreeNodes(TreeNode root){
         int sum=0;
         if(root==null)return 0;
         sum+=root.data;
-        sum+=sumOfNodes(root.left);
-        sum+=sumOfNodes(root.right);
+        sum+=sumOfTreeNodes(root.left);
+        sum+=sumOfTreeNodes(root.right);
         return sum;
     }
 }

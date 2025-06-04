@@ -10,8 +10,7 @@ public class LinkedList {
     void pushFront(int data){
         Node x=new Node(data);
         if(head==null){
-            head=x;
-            head.next=tail;
+            head=tail=x;
             return;
         }
         x.next=head;
@@ -22,7 +21,23 @@ public class LinkedList {
 
 
     //pushBack
+    void pushBack(int data){
+        Node x=new Node(data);
+        if(head==null){
+            head=tail=x;
+            return;
+        }
+        //without tail
+        /*Node temp=head;
+        while(temp.next!=null){
+            temp=temp.next;
+        }
+        temp.next=x;*/
 
+        //with tail
+        tail.next=x;
+        tail=x;
+    }
 
     //popBack
 
