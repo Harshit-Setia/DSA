@@ -18,7 +18,12 @@ public class LinkedList {
     }
 
     //popFront
-
+    int popFront(){
+        if(head==null){
+            
+        }
+        return 0;
+    }
 
     //pushBack
     void pushBack(int data){
