@@ -10,12 +10,7 @@ class Solution {
 
         for(int i:mp.keySet()){
             int temp=mp.get(i);
-            if(i==0){
-                count+=temp;
-            }
-            else{
-                count+=((i+1)*((temp+i)/(i+1)));
-            } 
+            count+=((i+1)*((temp+i)/(i+1))); 
         }
 
         return count;
