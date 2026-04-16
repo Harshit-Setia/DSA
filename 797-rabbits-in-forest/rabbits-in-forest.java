@@ -13,9 +13,6 @@ class Solution {
             if(i==0){
                 count+=temp;
             }
-            else if(temp<=i+1){
-                count+=(i+1);
-            }
             else{
                 count+=((i+1)*((temp+i)/(i+1)));
             } 
