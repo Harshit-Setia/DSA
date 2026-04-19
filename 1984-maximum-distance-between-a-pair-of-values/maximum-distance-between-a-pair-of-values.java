@@ -9,12 +9,11 @@ class Solution {
         while(i<n&&j<m){
             if(nums1[i]<=nums2[j]){
                 maxDist=Math.max(maxDist,j-i);
-                j++;
             }
             else{
                 i++;
-                j++;
             }
+            j++;
         }
         return maxDist;
     }
