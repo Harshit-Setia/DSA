@@ -4,15 +4,11 @@ class LRUCache {
         int val;
         Node prev;
         Node next;
-        Node(){
-            prev=null;
-            next=null;
-        }
+        Node(){}
 
         Node(int key,int val){
             this.key=key;
             this.val=val;
-            this();
         }
     }
     int capacity;
